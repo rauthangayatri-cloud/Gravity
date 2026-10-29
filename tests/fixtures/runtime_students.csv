@@ -1,0 +1,7 @@
+student_id,department,cgpa,active_backlogs,attendance_pct,lms_logins,assignment_completion_pct,coding_score,aptitude_score,mock_interview_score,placement_readiness,engagement_score,communication_score,hackathons,certifications,feedback_score
+U9001,Business,5.1,2,56,10,35,30,38,28,32,35,42,0,0,38
+U9002,Computer Science,8.7,0,94,104,96,93,91,88,90,84,87,4,3,88
+U9003,Digital Media,6.3,1,73,28,52,48,55,44,50,45,52,1,1,55
+U9004,Mechanical Engineering,7.4,0,82,56,74,62,68,66,65,62,64,2,1,68
+U9005,Business,5.8,3,64,18,40,36,42,35,38,30,46,0,0,44
+U9006,Computer Science,7.9,0,89,78,86,81,80,78,79,76,80,3,2,78

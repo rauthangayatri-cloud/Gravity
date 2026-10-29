@@ -1,0 +1,39 @@
+[tool.ruff]
+target-version = "py313"
+line-length = 120
+extend-exclude = [".venv", "data", "models", "web"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.mypy]
+python_version = "3.13"
+files = ["src", "api"]
+ignore_missing_imports = true
+follow_imports = "skip"
+no_site_packages = true
+check_untyped_defs = false
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+warn_return_any = false
+warn_unused_ignores = false
+no_implicit_optional = false
+disable_error_code = ["arg-type", "assignment", "attr-defined", "dict-item", "index", "operator", "return-value"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=src --cov=api --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["src", "api"]
+branch = true
+
+[tool.coverage.report]
+skip_empty = true
+show_missing = true

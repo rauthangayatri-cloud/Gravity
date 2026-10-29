@@ -1,0 +1,28 @@
+services:
+  api:
+    build: .
+    environment:
+      RUNTIME_STATE_DB: /state/demo.sqlite3
+      CORS_ALLOW_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+    volumes:
+      - demo-state:/state
+    ports:
+      - "127.0.0.1:8000:8000"
+  web:
+    image: node:lts-alpine
+    working_dir: /app/web
+    volumes:
+      - ./web:/app/web:ro
+      - web-dependencies:/app/web/node_modules
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    environment:
+      VITE_API_URL: http://localhost:8000
+    ports:
+      - "127.0.0.1:5173:5173"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  demo-state:
+  web-dependencies:

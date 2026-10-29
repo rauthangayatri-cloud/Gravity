@@ -1,0 +1,49 @@
+.git/
+.github/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+
+# Generated offline artifacts are rebuilt inside the image.
+models/
+data/raw/
+data/clean/
+data/outputs/
+api/*.sqlite3
+
+# Local frontend/build artifacts are not part of the API image.
+node_modules/
+web/node_modules/
+web/dist/
+
+# Local deployment configuration must not enter an image.
+.env
+.env.*
+!*.env.example
+
+# Never bake current or future runtime state, backups, or credentials into images.
+**/*.db
+**/*.db-*
+**/*.sqlite
+**/*.sqlite-*
+**/*.sqlite3
+**/*.sqlite3-*
+**/*.dump
+**/*.backup
+**/users.json
+data/runtime/
+data/uploads/
+data/tmp/
+runtime/
+uploads/
+backups/
+secrets/
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx
